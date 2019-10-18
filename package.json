@@ -26,7 +26,6 @@
     "commitmsg": "commitlint -e",
     "preupload": "npm run dist",
     "upload": "npm publish --access=public dist/",
-	"prepare": "npm run dist",
     "release": "standard-version --message 'build: release v%s'"
   },
   "devDependencies": {
