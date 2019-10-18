@@ -16,7 +16,7 @@ import { DateAdapter } from './core/index';
 import { createMissingDateImplError } from './datepicker-errors';
 
 export const CLOCK_RADIUS = 50;
-export const CLOCK_INNER_RADIUS = 27.5;
+export const CLOCK_INNER_RADIUS = 26.5;
 export const CLOCK_OUTER_RADIUS = 41.25;
 export const CLOCK_TICK_RADIUS = 7.0833;
 
@@ -277,7 +277,7 @@ export class MatClockView<D> implements AfterContentInit {
     const y = height / 2 - (pageY - triggerRect.top - window.pageYOffset);
     const unit = Math.PI / (this.hourView ? 6 : this.clockStep ? 30 / this.clockStep : 30);
     const z = Math.sqrt(x * x + y * y);
-    const outer = this.hourView && z > (width * (CLOCK_OUTER_RADIUS / 100) + width * (CLOCK_INNER_RADIUS / 100)) / 2;
+    const outer = this.hourView && z > (height * (CLOCK_OUTER_RADIUS / 100) + height * (CLOCK_INNER_RADIUS / 100)) / 2;
 
     let radian = Math.atan2(-x, y);
     if (radian < 0) {
